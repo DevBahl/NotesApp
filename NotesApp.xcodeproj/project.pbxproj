@@ -16,6 +16,7 @@
 		9BC652FC23E73FE6008D3771 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BC652FA23E73FE6008D3771 /* LaunchScreen.storyboard */; };
 		9BC6530723E73FE7008D3771 /* NotesAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC6530623E73FE7008D3771 /* NotesAppTests.swift */; };
 		9BC6531223E73FE7008D3771 /* NotesAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC6531123E73FE7008D3771 /* NotesAppUITests.swift */; };
+		9BC6532023E7472E008D3771 /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC6531F23E7472E008D3771 /* ToDoItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		9BC6530D23E73FE7008D3771 /* NotesAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NotesAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BC6531123E73FE7008D3771 /* NotesAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesAppUITests.swift; sourceTree = "<group>"; };
 		9BC6531323E73FE7008D3771 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9BC6531F23E7472E008D3771 /* ToDoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				9BC652EC23E73FE3008D3771 /* AppDelegate.swift */,
 				9BC652EE23E73FE3008D3771 /* SceneDelegate.swift */,
 				9BC652F323E73FE3008D3771 /* ContentView.swift */,
+				9BC6531F23E7472E008D3771 /* ToDoItem.swift */,
 				9BC652F523E73FE6008D3771 /* Assets.xcassets */,
 				9BC652FA23E73FE6008D3771 /* LaunchScreen.storyboard */,
 				9BC652FD23E73FE6008D3771 /* Info.plist */,
@@ -272,6 +275,7 @@
 			files = (
 				9BC652F223E73FE3008D3771 /* NotesApp.xcdatamodeld in Sources */,
 				9BC652ED23E73FE3008D3771 /* AppDelegate.swift in Sources */,
+				9BC6532023E7472E008D3771 /* ToDoItem.swift in Sources */,
 				9BC652F423E73FE3008D3771 /* ContentView.swift in Sources */,
 				9BC652EF23E73FE3008D3771 /* SceneDelegate.swift in Sources */,
 			);

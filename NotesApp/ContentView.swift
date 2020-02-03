@@ -11,9 +11,7 @@ import SwiftUI
 struct ContentView: View {
     
     @Environment(\.managedObjectContext) var managedObjectContext
-    
     @FetchRequest(fetchRequest: ToDoItem.getAllToDoItems()) var toDoItems:FetchedResults<ToDoItem>
-    
     @State private var newToDoItem = ""
     
     var body: some View {
@@ -23,6 +21,17 @@ struct ContentView: View {
                     HStack{
                         TextField("New Item", text: $newToDoItem)
                         Button(action:{
+                            let toDoItem = ToDoItem(context: self.managedObjectContext)
+                            toDoItem.title = self.newToDoItem
+                            toDoItem.createdAt = Date()
+                            
+                            do{
+                                try self.managedObjectContext.save()
+                            }catch{
+                                print(error)
+                            }
+                            
+                            self.newToDoItem = ""
                             
                         }){
                             Image(systemName: "plus.circle.fill")
@@ -32,7 +41,21 @@ struct ContentView: View {
                                 .foregroundColor(.green)
                         }
                     }
-                }.font(.headline)
+                } .font(.headline)
+                Section(header: Text("To Do's")){
+                    ForEach(self.toDoItems) {todoItem in
+                    ToDoItemView(title: todoItem.title!, createdAt:"\(todoItem.createdAt!)")
+                    }.onDelete{indexItem in
+                        let deleteItem = self.toDoItems[indexItem.first!]
+                        self.managedObjectContext.delete(deleteItem)
+                        
+                        do{
+                            try self.managedObjectContext.save()
+                        }catch{
+                            print(error)
+                        }
+                    }
+               }
             }
             .navigationBarTitle(Text("My Notes"))
             .navigationBarItems(trailing: EditButton())
